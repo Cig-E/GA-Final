@@ -1,0 +1,7 @@
+# Deny everything by default
+Require all denied
+
+# Only allow .torrent files
+<FilesMatch "\.torrent$">
+    Require all granted
+</FilesMatch>

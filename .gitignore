@@ -1,0 +1,4 @@
+config.php
+uploads/torrents/*
+!uploads/torrents/.gitkeep
+commands.txt
