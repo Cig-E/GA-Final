@@ -84,7 +84,7 @@ function btn($action, $id, $label, $class, $confirm = false) {
         <?php foreach ($data as $u): 
             if ($u['id'] === $_SESSION['user_id']) continue; ?>
             <tr>
-                <td><?= htmlspecialchars($u['username'] ?></td>
+                <td><?= htmlspecialchars($u['username']); ?></td>
                 <td><?= $u['role'] ?></td>
                 <td><?= $u['is_active'] ? 'Active' : 'Banned' ?></td>
                 <td>
