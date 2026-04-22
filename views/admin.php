@@ -32,12 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
+
+
 // Fetching data
 $tab = $_GET['tab'] ?? 'archives';
 $stats = $pdo->query("SELECT status, COUNT(*) as count FROM archives GROUP BY status")->fetchAll(PDO::FETCH_KEY_PAIR);
 $data = ($tab === 'users') 
     ? $pdo->query("SELECT * FROM users ORDER BY created_at DESC")->fetchAll()
     : $pdo->query("SELECT a.*, u.username FROM archives a LEFT JOIN users u ON a.user_id = u.id ORDER BY a.submitted_at DESC")->fetchAll();
+
+
+
 
 // UI Helper Function
 function actionBtn($action, $id, $label, $class, $confirm = false) {
